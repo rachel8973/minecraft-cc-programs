@@ -17,8 +17,7 @@ if #tArgs ~= 1 then
    return
 end
   
-local tLength = tonumber(tArgs[1])
-if tLength < 1 then
+if not(tArgs[1] == setup or tArgs[1] == farm) then
   printError("Please use setup or farm")
   return
 end
