@@ -4,13 +4,41 @@
 -- V1 : Jan 2022
 -----------------------------------------------------
 
+-- Check running in turtle
+if not turtle then
+  printError("Requires a Turtle")
+  return
+end
 
+-- Check input 
+local tArgs = { ... }
+if #tArgs ~= 1 then
+   print("Usage: treefarm setup/farm")
+   return
+end
+  
+local tLength = tonumber(tArgs[1])
+if tLength < 1 then
+  printError("Please use setup or farm")
+  return
+end
 
+print("=================================")
+print("= tree farm v1 : " .. tArgs[1])
+print("=================================")
+print("Please place a chest behind the turtle")
+print("with the following items ...")
+print(" Slot 01 - Fuel for turtle")
+print(" Slot 02 - Saplings (10)")
+local response = io.read
 
-function initialise()
-  
-  
-  
+if  tArgs[1]=="setup" then
+  print("Running the setup program")
+elseif tArgs[1]=="farm" then
+  print("Running the farm program")
+else
+  printError("Please use setup or farm")
+  return
 end
 
 
