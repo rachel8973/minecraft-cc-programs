@@ -49,9 +49,13 @@ end
 
 -- try Torch Place
 function torchPlace()
-  
-
-
+  -- assume torches in slot 16
+  turtle.select(16)
+  if turtle.getItemCount() > 0 then
+    if not(turtle.detectDown()) then
+      turtle.placeDown()
+    end  
+  end
 end
 
 -- Dig out section
@@ -83,8 +87,8 @@ tc = ts
 turtle.up()
 for pos = 1,tLength,1 do
   digSection()
-  
-  
-  
+  if math.fmod(pos,7) == 0 then
+    torchPlace()
+  end
 end
 turtle.down()
