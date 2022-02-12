@@ -35,12 +35,33 @@ end
 -- Initialise Variables  
 pos = 0
 
--- Initialise function names
-local digSection
+-- March Onwards
+function goForwards()
+  if turtle.detect() then turtle.dig() end
+  turtle.attack()
+  turtle.forward() 
+end 
+
+-- Dig out section
+function digSection()
+  goForwards()
+  turtle.digUp()
+  turtle.digDown()
+  turtle.turnLeft()
+  goForwards()
+  turtle.digUp()
+  turtle.digDown()
+  turtle.back()
+  turtle.turnRight()
+  turtle.turnRight()
+  goForwards()
+  turtle.digUp()
+  turtle.digDown()
+  turtle.back()
+  turtle.turnLeft()
+end
 
 -- Main function
-local function main()
-    
 print("+-------------------------------+")
 print("+-----    Tunneler 2  ---------+")
 print("+-------------------------------+")
@@ -50,30 +71,3 @@ for pos = 1,tLength,1 do
   digSection()
 end
 turtle.down()
- 
-end -- main
-
--- Dig out section
-function digSection()
-  turtle.dig()
-  turtle.forward()
-  turtle.digUp()
-  turtle.digDown()
-  turtle.turnLeft()
-  turtle.dig()
-  turtle.forward()
-  turtle.digUp()
-  turtle.digDown()
-  turtle.back()
-  turtle.turnRight()
-  turtle.turnRight()
-  turtle.dig()
-  turtle.forward()
-  turtle.digUp()
-  turtle.digDown()
-  turtle.back()
-  turtle.turnLeft()
-end
-
--- Kick off
-main()
