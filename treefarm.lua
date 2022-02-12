@@ -30,6 +30,7 @@ print("Please place a chest behind the turtle")
 print("with the following items ...")
 print(" Slot 01 - Fuel for turtle")
 print(" Slot 02 - Saplings (10)")
+print("Press enter when complete")
 local response = io.read
 
 if  tArgs[1]=="setup" then
