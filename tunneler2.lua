@@ -35,12 +35,24 @@ end
 -- Initialise Variables  
 pos = 0
 
+-- Torch placing
+-- Assume torches in slot 16
+ts = 5   -- space between torches
+tc = 0   -- counter
+
 -- March Onwards
 function goForwards()
   if turtle.detect() then turtle.dig() end
   turtle.attack()
   turtle.forward() 
-end 
+end
+
+-- try Torch Place
+function torchPlace()
+  
+
+
+end
 
 -- Dig out section
 function digSection()
@@ -66,8 +78,13 @@ print("+-------------------------------+")
 print("+-----    Tunneler 2  ---------+")
 print("+-------------------------------+")
 
+tc = ts
+
 turtle.up()
 for pos = 1,tLength,1 do
   digSection()
+  
+  
+  
 end
 turtle.down()
