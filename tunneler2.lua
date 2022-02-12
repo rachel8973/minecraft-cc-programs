@@ -39,7 +39,7 @@ pos = 0
 local digSection
 
 -- Main function
-function main()
+local function main()
     
 print("+-------------------------------+")
 print("+-----    Tunneler 2  ---------+")
@@ -54,7 +54,7 @@ turtle.down()
 end -- main
 
 -- Dig out section
-local function digSection()
+function digSection()
   turtle.dig()
   turtle.forward()
   turtle.digUp()
