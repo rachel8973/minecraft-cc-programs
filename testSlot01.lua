@@ -1,5 +1,6 @@
 -------------------------------------------------
 -- Test out slot maniputlation
+-- rachel
 -------------------------------------------------
 print("What's in slot 16?")
 turtle.select(16)
